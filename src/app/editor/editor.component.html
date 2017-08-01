@@ -1,0 +1,7 @@
+<div ace-editor
+       [text]="content"
+       [mode]="'sql'"
+       [theme]="'terminal'"
+       [autoUpdateContent]="true"
+       style="min-height: 200px; width:100%; overflow: auto;" (textChanged)="textChanged($event);">
+</div>
