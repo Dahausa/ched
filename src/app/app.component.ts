@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  editorText: string;
+
+/**
+ * Handles a textHasChangedEvent by the editor component
+ * @param {string} text
+ * @memberof AppComponent
+ */
+  handleTextHasChanged(text: string) {
+    console.log(text);
+    this.editorText = text;
+  }
+
 }

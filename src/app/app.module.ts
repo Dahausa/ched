@@ -19,8 +19,8 @@ import { PlainTxtOutputComponent } from './plain-txt-output/plain-txt-output.com
   declarations: [
     AppComponent,
     EditorComponent,
-  AceEditorDirective,
-  PlainTxtOutputComponent
+    AceEditorDirective,
+    PlainTxtOutputComponent
   ],
   imports: [
     BrowserModule,

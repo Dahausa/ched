@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit,Output, ViewChild,EventEmitter } from '@angular/core';
 
 //ACE Editor imports
 import { AceEditorComponent } from 'ng2-ace-editor';
@@ -13,14 +13,14 @@ import 'brace/mode/sql';
 })
 export class EditorComponent implements OnInit {
 
+  //Output to handOver the text in the editor
+  @Output() textHasChangedEvent = new EventEmitter();
+
  @ViewChild('editor') editor;
   text: string = "";
 
-    ngOnInit() {
-      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-      //Add 'implements OnInit' to the class.
+    ngOnInit() {    }
 
-    }
     ngAfterViewInit() {
         this.editor.setTheme("eclipse");
 
@@ -37,8 +37,14 @@ export class EditorComponent implements OnInit {
         })
     }
 
+    /**
+     * Gets the update of the ace-editor and emits an "textHasChangedEvent"
+     *
+     * @param {Event} textInEditor
+     * @memberof EditorComponent
+     */
     textChanged(textInEditor: Event) {
-      console.log(textInEditor);
+      this.textHasChangedEvent.emit(textInEditor);
       this.text = textInEditor.toString();
     }
 

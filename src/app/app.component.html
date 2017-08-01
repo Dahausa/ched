@@ -32,10 +32,10 @@
 
 </nav>
 <section style="padding:1 em;height:100 em;display: block;">
-  <app-editor></app-editor>
+  <app-editor (textHasChangedEvent) = handleTextHasChanged($event)></app-editor>
 </section>
 <section>
-  <app-plain-txt-output></app-plain-txt-output>
+  <app-plain-txt-output [songContentToOutput] = editorText ></app-plain-txt-output>
 </section>
 	<footer id="footer">
 		<p class="copyright">

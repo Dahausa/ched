@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { TokenizerService } from '../tokenizer.service';
 
+/**
+ * Component that handles song content and output it as plain old chords sheets
+ *
+ * @export
+ * @class PlainTxtOutputComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-plain-txt-output',
   templateUrl: './plain-txt-output.component.html',
@@ -14,9 +21,17 @@ export class PlainTxtOutputComponent implements OnInit {
   constructor(private tokenizer:TokenizerService) { }
 
   ngOnInit() {
-    this.output = this.tokenizer.getTokens("test test 1 2 3 !");
+
   }
 
-
+  /**
+   * Input Binding to pass the song content that needs to be outputted
+   *
+   * @memberof PlainTxtOutputComponent
+   */
+  @Input()
+  set songContentToOutput(content: string){
+    this.output = this.tokenizer.getTokens(content);
+  }
 
 }
