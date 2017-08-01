@@ -1,6 +1,6 @@
-import { Component, OnInit,Output, ViewChild,EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, ViewChild, EventEmitter } from '@angular/core';
 
-//ACE Editor imports
+// ACE Editor imports
 import { AceEditorComponent } from 'ng2-ace-editor';
 
 import 'brace/theme/clouds';
@@ -11,30 +11,30 @@ import 'brace/mode/sql';
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.css']
 })
-export class EditorComponent implements OnInit {
+export class EditorComponent implements OnInit, AfterViewInit {
 
-  //Output to handOver the text in the editor
+  // Output to handOver the text in the editor
   @Output() textHasChangedEvent = new EventEmitter();
 
  @ViewChild('editor') editor;
-  text: string = "";
+  text: String = '';
 
     ngOnInit() {    }
 
     ngAfterViewInit() {
-        this.editor.setTheme("eclipse");
+        this.editor.setTheme('eclipse');
 
         this.editor.getEditor().setOptions({
             enableBasicAutocompletion: true
         });
 
         this.editor.getEditor().commands.addCommand({
-            name: "showOtherCompletions",
-            bindKey: "Ctrl-.",
+            name: 'showOtherCompletions',
+            bindKey: 'Ctrl-.',
             exec: function (editor) {
 
             }
-        })
+        });
     }
 
     /**

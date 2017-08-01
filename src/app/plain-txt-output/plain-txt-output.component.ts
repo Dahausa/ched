@@ -1,5 +1,7 @@
 import { Component, OnInit , Input} from '@angular/core';
-import { TokenizerService } from '../tokenizer.service';
+
+// Import of javascript library chordsheetjs
+import ChordSheetJS from 'chordsheetjs';
 
 /**
  * Component that handles song content and output it as plain old chords sheets
@@ -12,13 +14,14 @@ import { TokenizerService } from '../tokenizer.service';
   selector: 'app-plain-txt-output',
   templateUrl: './plain-txt-output.component.html',
   styleUrls: ['./plain-txt-output.component.css'],
-  providers: [TokenizerService]
+  providers: []
 })
 export class PlainTxtOutputComponent implements OnInit {
 
-  private output: string[];
+  private htmlOutput: String = '';
+  private textOutput: String= '';
 
-  constructor(private tokenizer:TokenizerService) { }
+  constructor() { }
 
   ngOnInit() {
 
@@ -31,7 +34,20 @@ export class PlainTxtOutputComponent implements OnInit {
    */
   @Input()
   set songContentToOutput(content: string){
-    this.output = this.tokenizer.getTokens(content);
+
+    if (content.length > 10) {
+      // Usage of chordsheetjs library
+      var parser = new ChordSheetJS.ChordProParser();
+      var song = parser.parse(content);
+
+      const htmlFormatter = new ChordSheetJS.HtmlFormatter();
+      this.htmlOutput = htmlFormatter.format(song);
+      console.log(this.htmlOutput);
+
+      const textFormatter = new ChordSheetJS.TextFormatter();
+      this.textOutput = textFormatter.format(song);
+
+    }
   }
 
 }

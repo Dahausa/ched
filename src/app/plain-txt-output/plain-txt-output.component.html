@@ -1,3 +1,8 @@
-<p>
-  {{output}}
-</p>
+<md-tab-group>
+  <md-tab label="HTML">
+    <div [innerHTML]="htmlOutput"></div>
+  </md-tab>
+  <md-tab label="Text">
+    <span>{{textOutput}}</span>
+  </md-tab>
+</md-tab-group>
