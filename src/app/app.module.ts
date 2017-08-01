@@ -12,13 +12,15 @@ import { AceEditorDirective } from 'ng2-ace-editor'
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { EditorComponent } from './editor/editor.component';
+import { PlainTxtOutputComponent } from './plain-txt-output/plain-txt-output.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EditorComponent,
-  AceEditorDirective
+  AceEditorDirective,
+  PlainTxtOutputComponent
   ],
   imports: [
     BrowserModule,
