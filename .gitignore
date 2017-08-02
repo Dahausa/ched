@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/ched-linux-x64
 
 # dependencies
 /node_modules

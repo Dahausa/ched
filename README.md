@@ -31,3 +31,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Good links:
 Output of angular2 variables http://learnangular2.com/outputs/
 Import javascript libraries https://medium.com/@kermani/how-to-use-javascript-libraries-in-angular-2-apps-ff274ba601af
+Electron Tutorial https://scotch.io/tutorials/build-a-music-player-with-angular-2-electron-i-setup-basics-concepts
+
+
+## Electron App
+To start electron just type "electron ." in a shell in ched root folder
