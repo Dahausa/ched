@@ -18,8 +18,7 @@ import ChordSheetJS from 'chordsheetjs';
 })
 export class PlainTxtOutputComponent implements OnInit {
 
-  private htmlOutput: String = '';
-  private textOutput: String= '';
+  private formattedOutput: String = '';
 
   constructor() { }
 
@@ -41,12 +40,8 @@ export class PlainTxtOutputComponent implements OnInit {
       var song = parser.parse(content);
 
       const htmlFormatter = new ChordSheetJS.HtmlFormatter();
-      this.htmlOutput = htmlFormatter.format(song);
-      console.log(this.htmlOutput);
-
-      const textFormatter = new ChordSheetJS.TextFormatter();
-      this.textOutput = textFormatter.format(song);
-
+      this.formattedOutput = htmlFormatter.format(song);
+      console.log(this.formattedOutput);
     }
   }
 
