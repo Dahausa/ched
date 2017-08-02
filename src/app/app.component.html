@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="wrapper">
+<div id="wrapper" class="mat-typography">
 <header>
   <md-toolbar>
     <h1>Ched - The ChordPro Web Editor</h1>
   </md-toolbar>
 </header>
-<nav>
+<nav >
   <md-toolbar>
     <button md-icon-button [mdMenuTriggerFor]="menu">
     <md-icon>more_vert</md-icon>
@@ -29,8 +29,8 @@
         </button>
       </md-menu>
   </md-toolbar>
-
 </nav>
+
 <section style="padding:1 em;height:100 em;display: block;">
   <app-editor (textHasChangedEvent) = handleTextHasChanged($event)></app-editor>
 </section>

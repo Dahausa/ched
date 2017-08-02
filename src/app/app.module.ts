@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 
 // Ace
 import { AceEditorDirective } from 'ng2-ace-editor';
+// Gesture for material
+import 'hammerjs';
 
 // Custom
 import { AppComponent } from './app.component';

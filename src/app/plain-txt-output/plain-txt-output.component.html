@@ -1,8 +1,39 @@
-<md-tab-group>
-  <md-tab label="HTML">
-    <div [innerHTML]="htmlOutput"></div>
-  </md-tab>
-  <md-tab label="Text">
-    <span>{{textOutput}}</span>
-  </md-tab>
-</md-tab-group>
+<md-sidenav-container>
+
+  <!-- Formatting Sidebar -->
+  <md-sidenav #sidenav mode="side" opened="false">
+    <md-card>
+      <md-card-content>
+        <md-input-container>
+          <input mdInput placeholder="Chords Height">
+        </md-input-container>
+      </md-card-content>
+    </md-card>
+  </md-sidenav>
+
+  <!-- Song content -->
+  <md-card>
+
+    <md-card-title>
+        <md-button-toggle (click)="sidenav.toggle()">
+          <md-icon>format_align_left</md-icon>
+        </md-button-toggle>
+    </md-card-title>
+    <md-card-subtitle>
+      <md-toolbar>
+
+           Song
+
+      </md-toolbar>
+
+    </md-card-subtitle>
+    <md-card-content>
+      <div [innerHTML]="htmlOutput"></div>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button>
+            <i class="material-icons">get_app</i>Download
+        </button>
+    </md-card-actions>
+  </md-card>
+</md-sidenav-container>
