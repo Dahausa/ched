@@ -5,8 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 
-// Ace
-import { AceEditorDirective } from 'ng2-ace-editor';
+// ACE Editor imports
+import {AceEditorModule} from 'ng2-ace-editor';
 // Gesture for material
 import 'hammerjs';
 
@@ -14,15 +14,14 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { EditorComponent } from './editor/editor.component';
-import { PlainTxtOutputComponent } from './plain-txt-output/plain-txt-output.component';
+import { OutputModule } from './output/output.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditorComponent,
-    AceEditorDirective,
-    PlainTxtOutputComponent
+    EditorComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,8 @@ import { PlainTxtOutputComponent } from './plain-txt-output/plain-txt-output.com
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
-
+    OutputModule,
+    AceEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

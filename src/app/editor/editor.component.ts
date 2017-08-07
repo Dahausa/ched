@@ -1,7 +1,5 @@
 import { Component, OnInit, AfterViewInit, Output, ViewChild, EventEmitter } from '@angular/core';
 
-// ACE Editor imports
-import { AceEditorComponent } from 'ng2-ace-editor';
 
 import 'brace/theme/clouds';
 import 'brace/mode/sql';
@@ -19,33 +17,33 @@ export class EditorComponent implements OnInit, AfterViewInit {
  @ViewChild('editor') editor;
   text: String = '';
 
-    ngOnInit() {    }
+  ngOnInit() {    }
 
-    ngAfterViewInit() {
-        this.editor.setTheme('eclipse');
+  ngAfterViewInit() {
+      this.editor.setTheme('eclipse');
 
-        this.editor.getEditor().setOptions({
-            enableBasicAutocompletion: true
-        });
+      this.editor.getEditor().setOptions({
+          enableBasicAutocompletion: true
+      });
 
-        this.editor.getEditor().commands.addCommand({
-            name: 'showOtherCompletions',
-            bindKey: 'Ctrl-.',
-            exec: function (editor) {
+      this.editor.getEditor().commands.addCommand({
+          name: 'showOtherCompletions',
+          bindKey: 'Ctrl-.',
+          exec: function (editor) {
+            console.log('Shortcut Ctrl-. pressed');
+          }
+      });
+  }
 
-            }
-        });
-    }
-
-    /**
-     * Gets the update of the ace-editor and emits an "textHasChangedEvent"
-     *
-     * @param {Event} textInEditor
-     * @memberof EditorComponent
-     */
-    textChanged(textInEditor: Event) {
-      this.textHasChangedEvent.emit(textInEditor);
-      this.text = textInEditor.toString();
-    }
+  /**
+   * Gets the update of the ace-editor and emits an "textHasChangedEvent"
+   *
+   * @param {Event} textInEditor
+   * @memberof EditorComponent
+   */
+  textChanged(textInEditor: Event) {
+    this.textHasChangedEvent.emit(textInEditor);
+    this.text = textInEditor.toString();
+  }
 
 }

@@ -11,14 +11,23 @@ const url = require('url');
 
 require('dotenv').config();
 
-require('electron-reload')(__dirname);
+if(process.env.PACKAGE === 'false')
+  require('electron-reload')(__dirname);
 
 let win = null;
 
 app.on('ready', function () {
 
+  //const electronScreen = screen;
+  //const size = electronScreen.getPrimaryDisplay().workAreaSize;
+
   // Initialize the window to our specified dimensions
-  win = new BrowserWindow({width: 1000, height: 600});
+  win = new BrowserWindow({
+    x: 0,
+    y: 0,
+    width: 1000,
+    height: 800
+  });
 
   // Specify entry point
   // If we have a packaged application do not listen to a specified url, take a local file

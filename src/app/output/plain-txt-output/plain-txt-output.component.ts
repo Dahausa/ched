@@ -1,7 +1,11 @@
 import { Component, OnInit , Input} from '@angular/core';
 
+import { SongConfigurationComponent } from '../song-configuration/song-configuration.component';
+
+
 // Import of javascript library chordsheetjs
 import ChordSheetJS from 'chordsheetjs';
+
 
 /**
  * Component that handles song content and output it as plain old chords sheets
@@ -14,7 +18,7 @@ import ChordSheetJS from 'chordsheetjs';
   selector: 'app-plain-txt-output',
   templateUrl: './plain-txt-output.component.html',
   styleUrls: ['./plain-txt-output.component.css'],
-  providers: []
+  providers: [],
 })
 export class PlainTxtOutputComponent implements OnInit {
 

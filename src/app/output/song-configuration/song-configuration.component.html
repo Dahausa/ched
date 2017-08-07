@@ -1,0 +1,71 @@
+<md-card>
+  <md-card-content>
+    <table>
+      <tr>
+        <td>
+          Lyrics:
+        </td>
+        <td>
+          <md-input-container>
+            <input mdInput type="number" placeholder="size" [(ngModel)]="textSize">
+          </md-input-container>
+        </td>
+        <td>
+          <md-button-toggle>
+            <md-icon>format_bold</md-icon>
+          </md-button-toggle>
+        </td>
+        <td>
+          <md-button-toggle>
+            <md-icon>format_italic</md-icon>
+          </md-button-toggle>
+        </td>
+        <td>
+          <input [(colorPicker)]="color" [style.background]="color" [value]="color" [cpWidth]="'100px'" [cpPositionOffset]="'-30%'" [cpDialogDisplay]="'inline'" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Chords:
+        </td>
+        <td>
+          <md-input-container>
+            <input mdInput type="number" placeholder="chord size" [(ngModel)]="chordSize">
+          </md-input-container>
+        </td>
+        <td>
+          <md-button-toggle>
+            <md-icon>format_bold</md-icon>
+          </md-button-toggle>
+        </td>
+        <td>
+          <md-button-toggle>
+            <md-icon>format_italic</md-icon>
+          </md-button-toggle>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Tabs:
+        </td>
+        <td>
+          <md-input-container>
+            <input mdInput type="number" placeholder="tab size" [(ngModel)]="tabSize">
+          </md-input-container>
+        </td>
+        <td>
+          <md-button-toggle>
+            <md-icon>format_bold</md-icon>
+          </md-button-toggle>
+        </td>
+        <td>
+          <md-button-toggle>
+            <md-icon>format_italic</md-icon>
+          </md-button-toggle>
+        </td>
+      </tr>
+    </table>
+  </md-card-content>
+</md-card>
+
+textcolour chordfont chordcolour tabfont tabsize tabcolour
