@@ -1,46 +1,26 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="wrapper" class="mat-typography">
-<header>
-  <md-toolbar>
-    <h1>Ched - The ChordPro Web Editor</h1>
-  </md-toolbar>
-</header>
-<nav >
-  <md-toolbar>
-    <button md-icon-button [mdMenuTriggerFor]="menu">
-    <md-icon>more_vert</md-icon>
-    </button>
-      <md-menu #menu="mdMenu">
-          <button md-menu-item>
-          <md-icon>add</md-icon>
-          <span>New</span>
-        </button>
-        <button md-menu-item>
-          <md-icon>folder_open</md-icon>
-          <span>Open</span>
-        </button>
-        <button md-menu-item disabled>
-          <md-icon>file_upload</md-icon>
-          <span>Import</span>
-        </button>
-        <button md-menu-item>
-          <md-icon>archive</md-icon>
-          <span>Save</span>
-        </button>
-      </md-menu>
-  </md-toolbar>
-</nav>
+<div class="container">
+  <div class="starter-template">
+    <header>
+      <h1>Ched - The ChordPro Web Editor</h1>
+    </header>
+    <p class="lead">With this web based editor you're able to create chordpro files in about no time</p>
+  </div>
 
-<section style="padding:1 em;height:100 em;display: block;">
-  <app-editor (textHasChangedEvent) = handleTextHasChanged($event)></app-editor>
-</section>
-<section>
-  <app-plain-txt-output [songContentToOutput] = editorText ></app-plain-txt-output>
-</section>
-	<footer id="footer">
-		<p class="copyright">
-			&copy; Dahausa 2017. Made with angular
-		</p>
-	</footer>
+  <section style="padding:1 em;height:100 em;display: block;">
+    <app-editor (textHasChangedEvent)=handleTextHasChanged($event)></app-editor>
+  </section>
+  <section>
+    <app-plain-txt-output [songContentToOutput]=editorText></app-plain-txt-output>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">
+        <i class="material-icons">copyright</i> by Dahausa. Made with angular, bootstrap, ace-editor &amp; chordsheetjs
+      </span>
+    </div>
+</footer>
+
+
 </div>
-

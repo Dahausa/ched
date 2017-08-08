@@ -46,4 +46,16 @@ export class EditorComponent implements OnInit, AfterViewInit {
     this.text = textInEditor.toString();
   }
 
+  addComment(): void {
+    console.log('addComment');
+  }
+
+  addChorus(): void {
+    console.log('addChorus');
+  }
+
+  addVerse(): void {
+    console.log('addVerse');
+  }
+
 }
